@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', [App\Http\Controllers\site_controller::class, 'index']);
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/home', [App\Http\Controllers\project_controller::class, 'index'])->name('home');
+Route::get('/projects/create', [App\Http\Controllers\project_controller::class, 'create'])->name('projects.create');
+Route::post('/projects', [App\Http\Controllers\project_controller::class, 'store'])->name('projects.store');
+
