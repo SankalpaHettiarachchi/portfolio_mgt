@@ -531,11 +531,12 @@
                         <div class="portfolio-btn">
                             <div class="container">
                                 <div class="row pb-5">
-                                    <div class="col">
-                                        <a class="btn-outline-secondary border-2 mb-5">{{ $project->project_name }}</a>
+                                    <div class="col-12">
+                                        <b><a class="btn-outline-secondary border-2">{{ $project->project_name }}<hr> </a></b>
                                     </div>
-                                    <div class="col">
-                                        <a class="btn-outline-secondary border-2 mb-5">{{ $project->description }}</a>
+                                    <br>
+                                    <div class="col-12">
+                                        <a class="btn-outline-secondary border-2">{{ $project->description }}</a>
                                     </div>
                                 </div>
                                 <div class="row">
